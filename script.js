@@ -89,7 +89,7 @@ favoriteButton.addEventListener("click", function () {
   const pokemonData = JSON.parse(favoriteButton.dataset.pokemon);
   let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
-  // if Pokémon is already in favorites
+  // if Pokémon has been added or is already in favorites
   const exists = favorites.some((pokemon) => pokemon.id === pokemonData.id);
   if (!exists) {
     favorites.push(pokemonData);
