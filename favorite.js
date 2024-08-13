@@ -6,28 +6,49 @@ document.addEventListener("DOMContentLoaded", function () {
     favoritesContainer.innerHTML = "";
     if (favorites.length === 0) {
       favoritesContainer.innerHTML = `
-                <p class="no-favorites-message">
-                    No favorite pokemon.<br>
-                </p>
-            `;
+        <p class="no-favorites-message">
+          No favorite Pokémon.<br>
+        </p>
+      `;
       return;
     }
-    // create card to display pokemon
-    favorites.forEach((pokemon) => {
+
+    // Display Pokémon
+    favorites.forEach((pokemon, index) => {
       const pokemonCard = document.createElement("div");
       pokemonCard.classList.add("pokemon-card");
 
-      // name
+      // Name
       const name = document.createElement("h2");
       name.textContent = pokemon.name;
       pokemonCard.appendChild(name);
 
-      // sprite image
+      // Sprite image
       const sprite = document.createElement("img");
       sprite.src = pokemon.sprite;
       pokemonCard.appendChild(sprite);
 
+      const button = document.createElement("button");
+      button.textContent = pokemon.name;
+      pokemonCard.appendChild(name);
+
+      // Remove button
+      const removeButton = document.createElement("button");
+      removeButton.textContent = "Remove favorite";
+      removeButton.addEventListener("click", function () {
+        removeFromFavorites(index);
+      });
+      pokemonCard.appendChild(removeButton);
+
       favoritesContainer.appendChild(pokemonCard);
     });
+  }
+
+  // Function remove favorite
+  function removeFromFavorites(index) {
+    const updatedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    updatedFavorites.splice(index, 1);
+    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+    location.reload();
   }
 });
