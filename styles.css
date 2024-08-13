@@ -55,6 +55,63 @@ img {
   /* Make the container full height of the viewport */
 }
 
+/* buttons */
+#home-button {
+  background-color: skyblue;
+  border-radius: 10px;
+  border: none;
+  margin: 15px;
+  height: 30px;
+  cursor: pointer;
+}
+
+#home-button:hover {
+  background-color: blue;
+  color: white;
+}
+
+#search-button {
+  background-color: skyblue;
+  border-radius: 10px;
+  border: none;
+  width: 60px;
+  height: 20px;
+  cursor: pointer;
+}
+
+#search-button:hover {
+  background-color: blue;
+  color: white;
+}
+
+#favorite-button {
+  background-color: skyblue;
+  border-radius: 10px;
+  border: none;
+  width: 200px;
+  height: 30px;
+  cursor: pointer;
+}
+
+#favorite-button:hover {
+  background-color: blue;
+  color: white;
+}
+
+#add-favorite-button {
+  background-color: skyblue;
+  border-radius: 10px;
+  border: none;
+  width: 200px;
+  height: 30px;
+  cursor: pointer;
+}
+
+#add-favorite-button:hover {
+  background-color: blue;
+  color: white;
+}
+
 /* pokemon cards for favorite page */
 .pokemon-card {
   border: 1px solid #ccc;
@@ -63,6 +120,7 @@ img {
   margin-bottom: 15px;
   text-align: center;
   width: 200px;
+  background-color: #e6fbff;
 }
 
 .pokemon-card img {
@@ -70,9 +128,9 @@ img {
   height: auto;
 }
 
-.stats p {
+/* .stats p {
   margin: 5px 0;
-}
+} */
 
 #favorites-container {
   display: flex;

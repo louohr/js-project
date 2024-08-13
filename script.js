@@ -1,6 +1,6 @@
 const searchInput = document.getElementById("search-input");
 const searchButton = document.getElementById("search-button");
-const favoriteButton = document.querySelector(".favorite");
+const favoriteButton = document.getElementById("add-favorite-button");
 
 searchButton.addEventListener("click", function () {
   const inputValue = searchInput.value.toLowerCase().trim();

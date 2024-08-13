@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
             `;
       return;
     }
-    // display pokemon
+    // create card to display pokemon
     favorites.forEach((pokemon) => {
       const pokemonCard = document.createElement("div");
       pokemonCard.classList.add("pokemon-card");
