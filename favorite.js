@@ -14,23 +14,19 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Display Pokémon
+    // Display for every Pokémon
     favorites.forEach((pokemon, index) => {
       const pokemonCard = document.createElement("div");
       pokemonCard.classList.add("pokemon-card");
-
-      // Name
-      const name = document.createElement("h2");
-      name.textContent = pokemon.name;
-      pokemonCard.appendChild(name);
 
       // Sprite image
       const sprite = document.createElement("img");
       sprite.src = pokemon.sprite;
       pokemonCard.appendChild(sprite);
 
-      const button = document.createElement("button");
-      button.textContent = pokemon.name;
+      // Name
+      const name = document.createElement("h2");
+      name.textContent = pokemon.name;
       pokemonCard.appendChild(name);
 
       // Remove button
