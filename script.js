@@ -2,6 +2,7 @@ const searchInput = document.getElementById("search-input");
 const searchButton = document.getElementById("search-button");
 const favoriteButton = document.getElementById("add-favorite-button");
 
+// search button for user input to retrieve pokemon info
 searchButton.addEventListener("click", function () {
   const inputValue = searchInput.value.toLowerCase().trim();
   const pokemonInfo = document.getElementById("pokemon-info");
@@ -65,7 +66,7 @@ searchButton.addEventListener("click", function () {
       // Enable favorite button
       favoriteButton.disabled = false;
 
-      // Store the current Pokémon data for future use
+      // Store the current pokemon data for future use
       favoriteButton.dataset.pokemon = JSON.stringify({
         name: data.name,
         id: data.id,
@@ -85,11 +86,12 @@ searchButton.addEventListener("click", function () {
     });
 });
 
+// store pokemon in favorites
 favoriteButton.addEventListener("click", function () {
   const pokemonData = JSON.parse(favoriteButton.dataset.pokemon);
   let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
-  // if Pokémon has been added or is already in favorites
+  // if pokemon has been added or is already in favorites
   const exists = favorites.some((pokemon) => pokemon.id === pokemonData.id);
   if (!exists) {
     favorites.push(pokemonData);
