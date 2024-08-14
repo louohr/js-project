@@ -2,8 +2,8 @@ const searchInput = document.getElementById("search-input");
 const searchButton = document.getElementById("search-button");
 const favoriteButton = document.getElementById("add-favorite-button");
 
-// search button for user input to retrieve pokemon info
-searchButton.addEventListener("click", function () {
+// Search button to retrieve Pokémon info based on user input
+searchButton.addEventListener("click", async function () {
   const inputValue = searchInput.value.toLowerCase().trim();
   const pokemonInfo = document.getElementById("pokemon-info");
 
@@ -17,15 +17,16 @@ searchButton.addEventListener("click", function () {
     existingSprite.remove();
   }
 
-  // Fetch data from PokeAPI
-  fetch(`https://pokeapi.co/api/v2/pokemon/${inputValue}`)
-    .then((response) => {
+  // Fetch Pokémon data
+  async function fetchPokemonData(inputValue) {
+    try {
+      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${inputValue}`);
       if (!response.ok) {
         throw new Error("Pokémon not found");
       }
-      return response.json();
-    })
-    .then((data) => {
+      const data = await response.json();
+
+      // Update Pokémon details
       document.getElementById("pokemon-name").textContent = data.name.toUpperCase();
       document.getElementById("pokemon-id").textContent = `#${data.id}`;
       document.getElementById("weight").textContent = data.weight;
@@ -49,7 +50,7 @@ searchButton.addEventListener("click", function () {
         (stat) => stat.stat.name === "speed"
       ).base_stat;
 
-      // Add image
+      // Add sprite image
       const sprite = document.createElement("img");
       sprite.id = "sprite";
       sprite.src = data.sprites.front_default;
@@ -66,7 +67,7 @@ searchButton.addEventListener("click", function () {
       // Enable favorite button
       favoriteButton.disabled = false;
 
-      // Store the current pokemon data for future use
+      // Store the current Pokémon data for future use
       favoriteButton.dataset.pokemon = JSON.stringify({
         name: data.name,
         id: data.id,
@@ -79,19 +80,22 @@ searchButton.addEventListener("click", function () {
         }, {}),
         sprite: data.sprites.front_default,
       });
-    })
-    .catch((error) => {
+    } catch (error) {
       alert(error.message);
       favoriteButton.disabled = true;
-    });
+      console.error("There was a problem:", error);
+    }
+  }
+
+  await fetchPokemonData(inputValue);
 });
 
-// store pokemon in favorites
+// Store Pokémon in favorites
 favoriteButton.addEventListener("click", function () {
   const pokemonData = JSON.parse(favoriteButton.dataset.pokemon);
   let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
-  // if pokemon has been added or is already in favorites
+  // Check if the Pokémon is already in favorites
   const exists = favorites.some((pokemon) => pokemon.id === pokemonData.id);
   if (!exists) {
     favorites.push(pokemonData);
