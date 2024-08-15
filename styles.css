@@ -4,9 +4,7 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  /* background-color: aquamarine; */
   background-color: #fee8b7;
-  /* background-image: url(images/pokemonwp.jpg); */
 }
 
 #content-container {

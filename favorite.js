@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Display for every Pokémon
+    // Display for every Pokémon in cards
     favorites.forEach((pokemon, index) => {
       const pokemonCard = document.createElement("div");
       pokemonCard.classList.add("pokemon-card");
