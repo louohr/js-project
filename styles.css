@@ -1,10 +1,22 @@
+:root {
+  --background-color: #fee8b7;
+  --pokemon-background: #fff;
+  --button: skyblue;
+  --button-hover: rgb(26, 119, 161);
+  --p-hover: white;
+  --border: #ccc;
+  --pokemon-card-background: #e6fbff;
+  --font-lobster: 'Lobster', sans-serif;
+  --font-p: 'Lucida Sans', sans-serif;
+}
+
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
-  background-color: #fee8b7;
+  background-color: var(--background-color);
 }
 
 #content-container {
@@ -16,7 +28,7 @@ body {
 }
 
 #pokemon-info {
-  background-color: #fff;
+  background-color: var(--pokemon-background);
   border-radius: 5px;
   padding: 20px;
   margin-top: 20px;
@@ -26,11 +38,11 @@ body {
 }
 
 h1 {
-  font-family: 'Lobster'
+  font-family: var(--font-lobster);
 }
 
 p {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: var(--font-p);
   margin: 10px 0;
 }
 
@@ -55,7 +67,7 @@ img {
 
 /* buttons */
 #home-button {
-  background-color: skyblue;
+  background-color: var(--button);
   border-radius: 10px;
   border: none;
   margin: 15px;
@@ -64,12 +76,12 @@ img {
 }
 
 #home-button:hover {
-  background-color: rgb(26, 119, 161);
+  background-color: var(--button-hover);
   color: white;
 }
 
 #search-button {
-  background-color: skyblue;
+  background-color: var(--button);
   border-radius: 10px;
   border: none;
   width: 60px;
@@ -78,12 +90,12 @@ img {
 }
 
 #search-button:hover {
-  background-color: rgb(26, 119, 161);
+  background-color: var(--button-hover);
   color: white;
 }
 
 #favorite-button {
-  background-color: skyblue;
+  background-color: var(--button);
   border-radius: 10px;
   border: none;
   width: 200px;
@@ -92,12 +104,12 @@ img {
 }
 
 #favorite-button:hover {
-  background-color: rgb(26, 119, 161);
+  background-color: var(--button-hover);
   color: white;
 }
 
 #add-favorite-button {
-  background-color: skyblue;
+  background-color: var(--button);
   border-radius: 10px;
   border: none;
   width: 200px;
@@ -106,12 +118,12 @@ img {
 }
 
 #add-favorite-button:hover {
-  background-color: rgb(26, 119, 161);
+  background-color: var(--button-hover);
   color: white;
 }
 
 .remove-button {
-  background-color: skyblue;
+  background-color: var(--button);
   border-radius: 10px;
   border: none;
   width: 150px;
@@ -120,19 +132,19 @@ img {
 }
 
 .remove-button:hover {
-  background-color: rgb(26, 119, 161);
-  color: white;
+  background-color: var(--button-hover);
+  color: var(--p-hover)
 }
 
 /* pokemon cards for favorite page */
 .pokemon-card {
-  border: 1px solid #ccc;
+  border: 1px solid var(--border);
   border-radius: 10px;
   padding: 10px;
   margin-bottom: 15px;
   text-align: center;
   width: 200px;
-  background-color: #e6fbff;
+  background-color: var(--pokemon-card-background)
 }
 
 .pokemon-card img {
