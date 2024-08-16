@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const favoritesContainer = document.getElementById("favorites-container");
   const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
-  // if no pokemon
+  // If no pokemon
   if (favoritesContainer) {
     favoritesContainer.innerHTML = "";
     if (favorites.length === 0) {
