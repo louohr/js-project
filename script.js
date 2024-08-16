@@ -17,7 +17,7 @@ searchButton.addEventListener("click", async function () {
     existingSprite.remove();
   }
 
-  // Get all pokemons
+  // Get pokemons
   async function fetchPokemons() {
     let response = await fetch("https://pokeapi.co/api/v2/pokemon/", {
       method: "GET",
