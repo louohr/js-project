@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const favoritesContainer = document.getElementById("favorites-container");
   const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
-  // If no pokemon
+  // If no Pokémon is on the favorite page
   if (favoritesContainer) {
     favoritesContainer.innerHTML = "";
     if (favorites.length === 0) {
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Function remove favorite
+  // Remove and update favorite
   function removeFromFavorites(index) {
     const updatedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
     updatedFavorites.splice(index, 1);
