@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Remove button
       const removeButton = document.createElement("button");
       removeButton.classList.add("remove-button");
+      removeButton.classList.add("remove-button:hover");
       removeButton.textContent = "Remove favorite";
       removeButton.addEventListener("click", function () {
         removeFromFavorites(index);

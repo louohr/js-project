@@ -64,7 +64,7 @@ img {
 }
 
 #home-button:hover {
-  background-color: blue;
+  background-color: rgb(26, 119, 161);
   color: white;
 }
 
@@ -78,7 +78,7 @@ img {
 }
 
 #search-button:hover {
-  background-color: blue;
+  background-color: rgb(26, 119, 161);
   color: white;
 }
 
@@ -92,7 +92,7 @@ img {
 }
 
 #favorite-button:hover {
-  background-color: blue;
+  background-color: rgb(26, 119, 161);
   color: white;
 }
 
@@ -106,7 +106,7 @@ img {
 }
 
 #add-favorite-button:hover {
-  background-color: blue;
+  background-color: rgb(26, 119, 161);
   color: white;
 }
 
@@ -117,6 +117,11 @@ img {
   width: 150px;
   height: 30px;
   cursor: pointer;
+}
+
+.remove-button:hover {
+  background-color: rgb(26, 119, 161);
+  color: white;
 }
 
 /* pokemon cards for favorite page */
@@ -134,10 +139,6 @@ img {
   max-width: 100%;
   height: auto;
 }
-
-/* .stats p {
-  margin: 5px 0;
-} */
 
 #favorites-container {
   display: flex;
