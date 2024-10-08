@@ -4,6 +4,6 @@ This is a Pokémon Search App, where users can view Pokémon stats, and add them
 
 Link to api: https://pokeapi.co/
 
-# Screenshot
+## Screenshot
 ![Screenshot 2024-10-08 at 11-42-35 Pokémon Search App](https://github.com/user-attachments/assets/b03e885b-38c5-4c30-8f9c-d5d924cd6c33)
 
